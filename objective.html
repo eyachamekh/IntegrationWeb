@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9arnit - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#80b9e5',
+                        secondary: '#2b4669',
+                        darkblue: '#184363',
+                        lightblue: '#d6eaf9',
+                        lightgray: '#edf4f6',
+                        coral: '#f89996',
+                        footer: '#0a2640',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="#" class="text-2xl font-bold text-sky-400">T9arnit</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Home</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Products</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Services</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Guide</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-gray-900">Objective</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Promotion</a>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-darkblue text-white px-4 py-2 rounded-md text-sm">Achetez maintenant</button>
+                        <div class="flex items-center space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary"><i class="fas fa-language"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-primary"><i class="fas fa-user"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-primary"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-gray-800">
+                    </button>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                        </svg>
+                    </a>
+                    <button id="mobileMenuButton" class="md:hidden text-gray-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="md:hidden py-4 border-t hidden">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Home</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Products</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Services</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Guide</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-gray-900">Objective</a>
+                    <a href="#" class="text-sky-400 hover:text-sky-500">Promotion</a>
+                    <button class="bg-gray-700 text-white px-4 py-1 rounded text-sm w-fit">Achetez maintenant</button>
+                </nav>
+            </div>
+            <div class="flex py-4">
+                <div class="relative flex-grow max-w-3xl">
+                    <div class="flex border border-gray-300 rounded-md overflow-hidden">
+                        <button class="bg-gray-100 px-3 py-2 text-sm text-gray-600 border-r border-gray-300 whitespace-nowrap">
+                            Toutes les catégories
+                        </button>
+                        <input type="text" placeholder="Qu'est-ce que tu cherches?" class="w-full px-4 py-2 focus:outline-none">
+                        <button class="bg-blue-900 text-white px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="relative w-full h-48 md:h-80 overflow-hidden">
+        <img src="back.png" alt="Banner" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Section Title -->
+        <h2 class="text-2xl md:text-3xl text-center font-medium text-coral mb-8">Choisir l'objective</h2>
+        
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Categories Sidebar -->
+            <div class="w-full md:w-1/4 lg:w-1/5">
+                <div class="border rounded-md p-4">
+                    <h3 class="font-medium mb-4">Catégorie</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">VÊTEMENTS</h4>
+                            <ul class="space-y-2 pl-2">
+                                <li><a href="#" class="text-primary text-sm">VÊTEMENTS POUR HOMMES</a></li>
+                                <li><a href="#" class="text-primary text-sm">VÊTEMENTS POUR FEMMES</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">CHAUSSURE</h4>
+                            <ul class="space-y-2 pl-2">
+                                <li><a href="#" class="text-primary text-sm">CHAUSSURES POUR HOMME</a></li>
+                                <li><a href="#" class="text-primary text-sm">CHAUSSURES POUR FEMME</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">DECORATION</h4>
+                            <ul class="space-y-2 pl-2">
+                                <li><a href="#" class="text-primary text-sm">MAISON</a></li>
+                                <li><a href="#" class="text-primary text-sm">CHAMBRE</a></li>
+                                <li><a href="#" class="text-primary text-sm">SALON</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">HYGIÈNE/BEAUTÉ</h4>
+                            <ul class="space-y-2 pl-2">
+                                <li><a href="#" class="text-primary text-sm">SOINS DU VISAGE</a></li>
+                                <li><a href="#" class="text-primary text-sm">SOINS CAPILLAIRES</a></li>
+                                <li><a href="#" class="text-primary text-sm">SOINS DU CORPS</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">ÉLECTRONIQUE</h4>
+                            <ul class="space-y-2 pl-2">
+                                <li><a href="#" class="text-primary text-sm">TÉLÉPHONE</a></li>
+                                <li><a href="#" class="text-primary text-sm">ORDINATEUR PORTABLE</a></li>
+                                <li><a href="#" class="text-primary text-sm">NOTEPAD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="w-full md:w-3/4 lg:w-4/5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product 1 -->
+                    <div class="border rounded-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="dress.jpg" alt="Robe Rouge" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">Robe Rouge</h3>
+                            <p class="text-center font-medium">130.00 DT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="border rounded-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="jacket.jpg" alt="Jacket Noir Zara" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">Jacket Noir Zara</h3>
+                            <p class="text-center font-medium">100.00 DT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="border rounded-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="blue dress.jpg" alt="Robe Bleu Bershka" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">Robe Bleu Bershka</h3>
+                            <p class="text-center font-medium">60.00 DT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="border rounded-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="black dress.jpg" alt="Robe Noire" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">Robe Noire</h3>
+                            <p class="text-center font-medium">110.00 DT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="border rounded-md overflow-hidden">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="zara jack.jpg" alt="Jacket Noir Zara" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">Jacket Noir Zara</h3>
+                            <p class="text-center font-medium">100.00 DT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="border rounded-md overflow-hidden relative">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white rounded-full p-1">
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                        <div class="h-48 bg-gray-100 flex items-center justify-center">
+                            <img src="pull noir.jpg" alt="T-Shirt Noire" class="h-full object-contain">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-primary text-center mb-2">T-Shirt Noire</h3>
+                            <p class="text-center font-medium">60.00 DT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommendations Section -->
+        <div class="mt-16">
+            <h2 class="text-2xl md:text-3xl text-center font-medium text-coral mb-8">Recommendations -50 DT</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Recommendation 1 -->
+                <div class="border rounded-md overflow-hidden">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="doris.jpg" alt="PACK SOIN VISAGE DORIS 4en1" class="h-full object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-primary text-center mb-2">PACK SOIN VISAGE DORIS 4en1</h3>
+                        <p class="text-center font-medium">48.00 DT</p>
+                    </div>
+                </div>
+                
+                <!-- Recommendation 2 -->
+                <div class="border rounded-md overflow-hidden">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="svr.jpg" alt="SVR SEBIACLEAR GEL MOUSSANT" class="h-full object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-primary text-center mb-2">SVR SEBIACLEAR GEL MOUSSANT</h3>
+                        <p class="text-center font-medium">48.27 DT</p>
+                    </div>
+                </div>
+                
+                <!-- Recommendation 3 -->
+                <div class="border rounded-md overflow-hidden">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="ssss.jpg" alt="SVR AMPOULE ANTI OX VITAMINE C" class="h-full object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-primary text-center mb-2">SVR AMPOULE ANTI OX VITAMINE C</h3>
+                        <p class="text-center font-medium">39.00 DT</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="flex justify-end mt-6">
+                <button class="bg-darkblue text-white px-6 py-2 rounded-md">Next</button>
+            </div>
+        </div>
+        
+        <!-- persona -->
+        <div class="relative mt-16 flex flex-col md:flex-row items-center justify-center">
+            <div class="relative max-w-sm">
+                <div class="bg-white border-2 border-primary rounded-3xl p-6 relative">
+                    <div class="absolute w-4 h-4 bg-white border-r-2 border-b-2 border-primary transform rotate-45 -bottom-2 left-1/2 -translate-x-1/2"></div>
+                    <p class="text-center text-primary">
+                        Définissez vos priorités pour une expérience adaptée à vos besoins et à votre budget.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-footer text-white mt-16 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Logo and Tagline -->
+                <div>
+                    <h2 class="text-2xl font-bold text-primary mb-4">T9arnit</h2>
+                    <p class="text-sm mb-4">Achetez plus intelligemment.<br>Faites-vous livrer.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Home</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-primary">Produits</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary">Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary">Guide</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Locations -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Locations</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-primary">El Marsa</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary">El Ghazela</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary">Cite El Nasser</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary">El Menzah 9</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-sm text-gray-400">
+                @All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
