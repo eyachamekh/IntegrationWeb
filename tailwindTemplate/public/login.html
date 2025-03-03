@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-lg">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <h1 class="text-5xl font-bold text-[#2B4669]">T9arnit</h1>
+                    
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#" class=" text-xl hover:text-[#80B9E5]">Home</a>
+                        <a href="index.html" class="text-xl hover:text-[#80B9E5]">Produits</a>
+                        <a href="#" class="text-xl hover:text-[#80B9E5]">Services</a>
+                        <select class="text-xl hover:text-[#80B9E5] focus:border-[#80B9E5] focus:ring-[#80B9E5]">
+                            <option value="fr">Français</option>
+                            <option value="en">English</option>
+                        </select>
+                        <button class="bg-[#80B9E5] text-white px-4 py-2 rounded-lg hover:bg-[#6da3d1]">
+                            Achetez maintenant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+    <div class="content">
+        <div class="container mx-auto px-4 py-8">
+            <div class="w-full mx-auto bg-white rounded-lg shadow-md p-12" style="max-width: 700px; height: 900px;">
+                <h1 class="text-4xl font-bold text-center mb-8 text-[#80B9E5]">Se connecter</h1>
+               
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 text-lg font-bold mb-2">Adresse mail ou nom d’utilisateur</label>
+                        <input type="text" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 text-lg font-bold mb-2">Mot de passe</label>
+                        <input type="password" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-blue-600 text-sm font-bold">Mot de passe oublié</a>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">Se souvenir
+                        </label>
+                    </div>
+
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition text-lg font-bold">
+                        Se connecter
+                    </button>
+                </form>
+
+                <div class="my-6 flex items-center">
+                    <div class="flex-1 border-t"></div>
+                    <span class="px-4 text-gray-500 text-lg font-bold">OU</span>
+                    <div class="flex-1 border-t"></div>
+                </div>
+            <div class="space-y-4">
+                <button class="w-full flex items-center justify-center gap-2 bg-blue-800 text-white py-3 rounded-lg text-lg font-bold">
+                    <i class="fab fa-facebook"></i>Continuer avec Facebook
+                </button>
+                <button class="w-full flex items-center justify-center gap-2 bg-sky-500 text-white py-3 rounded-lg text-lg font-bold">
+                    <i class="fab fa-twitter"></i>Continuer avec Twitter
+                </button>
+                <button class="w-full flex items-center justify-center gap-2 bg-[#F27D0C] text-white py-3 rounded-lg text-lg font-bold">
+                    <i class="fab fa-google"></i>Continuer avec Google
+                </button>
+            </div>
+
+            <p class="text-center mt-6 text-lg font-bold">Vous n'avez pas de compte? </p>
+            
+            <div class="mt-5"></div>
+
+            <button onclick="window.location.href='signup.html'" class="w-full bg-white text-[#80B9E5] py-3 rounded-lg border border-[#80B9E5] hover:bg-gray-100 transition text-lg font-bold">
+                S'inscrire
+            </button>
+        </div>
+        <div class="mt-12"></div>
+    </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-[#2B4669] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h2 class="text-2xl  font-bold mb-4">T9arnit</h2>
+                    <p class="text-gray-400">Achetez plus intelligemment. Faites-vous livrer.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Produits</a></li>
+                        <li><a href="#" class="hover:text-white">Services</a></li>
+                        <li><a href="#" class="hover:text-white">Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Locations</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>El Marsa</li>
+                        <li>El Ghazela</li>
+                        <li>Cité El Nasser</li>
+                        <li>El Menzah 9</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p class="text-gray-400 text-sm">© All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

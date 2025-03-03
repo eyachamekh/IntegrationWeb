@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9arnit - Carte Interactive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            height: 700px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Icône du persona fixée à gauche */
+        .persona-container {
+            position: fixed;
+            left: 20px;
+            top: 60%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: 500px; /* Même hauteur que la carte */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .persona-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold text-[#80B9E5]">T9arnit</h1>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="objective.html" class="hover:text-[#80B9E5]">Home</a>
+                    <a href="index.html" class="font-bold text-[#80B9E5]">Produits</a>
+                    <a href="#" class="hover:text-[#80B9E5]">Services</a>
+                    <a href="#" class="hover:text-[#80B9E5]">Guide</a>
+                    <button class="bg-[#80B9E5] text-white px-4 py-2 rounded-lg hover:bg-[#6da3d1]">
+                        Achetez maintenant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <!-- Barre de catégories et recherche -->
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row gap-4">
+                <select class="p-2 border rounded-lg focus:border-[#80B9E5] focus:ring-[#80B9E5]">
+                    <option>Toutes les catégories</option>
+                    <option>Épicerie</option>
+                    <option>Boissons</option>
+                    <option>Produits Frais</option>
+                </select>
+                <input type="text" 
+                       placeholder="Qu’est-ce que tu cherches?" 
+                       class="p-2 border rounded-lg flex-grow focus:border-[#80B9E5] focus:ring-[#80B9E5]">
+            </div>
+        </div>
+
+    <!-- Icône du Persona Fixe -->
+  
+    <!-- Carte Interactive -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="rounded-xl shadow-2xl">
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2B4669] text-white py-8">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Colonne Gauche -->
+            <div class="mb-6 md:mb-0">
+              <h2 class="text-xl font-bold mb-4">T9arnit</h2>
+              <p class="text-gray-400">Achetez plus intelligemment.<br>Faites-vous livrer.</p>
+            </div>
+      
+            <!-- Colonne Centrale -->
+            <div class="mb-6 md:mb-0">
+              <h3 class="font-bold mb-4">Navigation</h3>
+              <ul class="space-y-2 text-gray-400">
+                <li><a href="#" class="hover:text-white">Home</a></li>
+                <li><a href="index.html" class="hover:text-white">Produits</a></li>
+                <li><a href="#" class="hover:text-white">Services</a></li>
+                <li><a href="#" class="hover:text-white">Guide</a></li>
+              </ul>
+            </div>
+      
+            <!-- Colonne Droite -->
+            <div>
+              <h3 class="font-bold mb-4">Locations</h3>
+              <ul class="space-y-2 text-gray-400">
+                <li>El Marsa</li>
+                <li>El Ghazela</li>
+                <li>Cite El Nasser</li>
+                <li>El Menzah 9</li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Copyright -->
+          <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+            <p class="text-gray-400 text-sm">
+              © All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Script pour afficher la carte -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map').setView([36.8065, 10.1815], 13); // Position initiale: Tunis
+
+            // Ajouter la couche OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Ajouter une icône personnalisée pour le persona
+            var personaIcon = L.icon({
+                iconUrl: '../assets/persona.png', // Remplace par ton image
+                iconSize: [300, 300], 
+                iconAnchor: [30, 30], 
+                popupAnchor: [0, -30] 
+            });
+
+            // Marqueur du persona sur la carte
+            L.marker([36.8065, 10.1815], { icon: personaIcon })
+                .addTo(map)
+                .bindPopup("<b>Moi</b><br>Je suis ici!");
+
+            // Ajout des autres marqueurs
+            var locations = [
+                { lat: 36.81897, lng: 10.16579, name: "Épicerie Centrale" },
+                { lat: 36.80583, lng: 10.18333, name: "Boulangerie du Coin" },
+                { lat: 36.81727, lng: 10.17885, name: "Café Chill" }
+            ];
+
+            locations.forEach(loc => {
+                L.marker([loc.lat, loc.lng]).addTo(map)
+                    .bindPopup(`<b>${loc.name}</b>`)
+                    .openPopup();
+            });
+        });
+    </script>
+
+</body>
+</html>

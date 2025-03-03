@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9arnit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-section {
+            background-image: url('https://t3.ftcdn.net/jpg/02/58/04/94/360_F_258049471_Y3V50j0SbUM9YirpZ9NXirhdJRQEJanh.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            width: auto;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+   <!-- Navigation -->
+<nav class="bg-white shadow-lg">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold text-[#80B9E5]">T9arnit</h1>
+
+            <!-- Bouton pour afficher le menu sur mobile -->
+            <button id="menu-btn" class="md:hidden text-[#80B9E5] text-2xl focus:outline-none">
+                ☰
+            </button>
+
+            <!-- Menu -->
+            <div id="menu" class="hidden md:flex flex-col md:flex-row items-center space-x-6 md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-4 md:p-0">
+                <a href="objective.html" class="hover:text-[#80B9E5] block md:inline">Home</a>
+                <a href="index.html" class="font-bold text-[#80B9E5] block md:inline">Produits</a>
+                <a href="#" class="hover:text-[#80B9E5] block md:inline">Services</a>
+                <a href="promo.html" class="hover:text-[#80B9E5] block md:inline">promo</a>
+
+                <a href="#" class="hover:text-[#80B9E5] block md:inline">Guide</a>
+                <button class="bg-[#80B9E5] text-white px-4 py-2 rounded-lg hover:bg-[#6da3d1] block md:inline">
+                    Achetez maintenant
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Barre de catégories et recherche -->
+<div class="container mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row gap-4">
+        <select class="p-2 border rounded-lg focus:border-[#80B9E5] focus:ring-[#80B9E5]">
+            <option>Toutes les catégories</option>
+            <option>Épicerie</option>
+            <option>Boissons</option>
+            <option>Produits Frais</option>
+        </select>
+        <input type="text" 
+               placeholder="Qu’est-ce que tu cherches?" 
+               class="p-2 border rounded-lg flex-grow focus:border-[#80B9E5] focus:ring-[#80B9E5]">
+    </div>
+</div>
+
+<!-- Script pour gérer le menu responsive -->
+<script>
+    document.getElementById("menu-btn").addEventListener("click", function () {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+    });
+</script>
+
+
+    <!-- Section Image Principale avec Bannière de Promotion -->
+    <section class="main-section relative">
+        <!-- Bannière de promotion -->
+        <div class="absolute top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-10">
+            <span class="font-bold">Promotion spéciale !</span> Jusqu'à -50% sur une sélection de produits.
+        </div>
+
+        <div class="absolute inset-0">
+            <img src="https://www.geantdrive.tn/tunis-city/1237646-home_default/lait-uht-1-2-ecreme.jpg" 
+                 class="absolute top-[45%] left-[25%] w-32 shadow-xl">
+                 <img src="https://www.geantdrive.tn/tunis-city/1292615-large_default/nettoyant-sol-et-surface.jpg" 
+                 class="absolute top-[75%] left-[25%] w-32 shadow-xl">
+            <img src="https://www.geantdrive.tn/tunis-city/1217128-large_default/harissa.jpg" 
+                 class="absolute top-[50%] left-[15%] w-32 shadow-xl">
+            <img src="https://www.geantdrive.tn/tunis-city/1217128-large_default/harissa.jpg" 
+                 class="absolute top-[45%] left-[70%] w-32 shadow-xl">
+                 <img src="https://www.sididaoud.com.tn/wp-content/uploads/2020/02/B1A2761.png" 
+                 class="absolute top-[49%] left-[65%] w-32 shadow-xl">
+                 <img src="https://www.geantdrive.tn/tunis-city/1161346-large_default/eau-de-source.jpg" 
+                 class="absolute top-[58%] left-[55%] w-32 shadow-xl">
+            <img src="https://www.promofoodtunisie.com/wp-content/uploads/2023/06/produits1.png" 
+                 class="absolute top-[50%] left-[3%] w-64 shadow-xl">
+            <img src="https://www.geantdrive.tn/tunis-city/1217261-large_default/cereales-ble.jpg" 
+                 class="absolute top-[40%] left-[80%] w-64 shadow-xl">
+            <img src="https://www.geantdrive.tn/tunis-city/1280499-large_default/tomate-fraiche-concassee.jpg" 
+                 class="absolute top-[25%] right-[50%] w-16 shadow-xl">
+            <img src="../assets/persona.png" 
+                 class="absolute top-[32%] left-[40%]  w-[350px] h-[400px]  shadow-xl">
+        </div>
+    </section>
+    
+
+    <!-- Cartes Produits avec Icônes de Promotion -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Carte 1 avec Promo -->
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover relative">
+                <!-- Icône de promotion -->
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-xl text-sm">
+                    <span class="font-bold">Promo</span>
+                </div>
+                
+                <div class="flex justify-between items-start">
+                    <h3 class="text-xl font-bold text-[#80B9E5]">Harissa Carrefour</h3>
+                </div>
+                
+                <div class="mt-4">
+                    <p class="text-2xl font-bold text-gray-800">0.780 DT</p>
+                    
+                    <!-- Localisation cliquable soulignée -->
+                    <div class="mt-3 flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2 text-[#80B9E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <a href="maps.html" class="underline hover:text-[#80B9E5]">El Marsa</a>
+                    </div>
+
+                    <!-- Bouton avec icône de panier -->
+                    <button class="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte 2 Standard -->
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                 
+                <div class="flex justify-between items-start">
+                    <h3 class="text-xl font-bold text-[#80B9E5]">Harissa MG</h3>
+                </div>
+
+                <div class="mt-4">
+                    <p class="text-2xl font-bold text-gray-800">0.720 DT</p>
+
+                    <!-- Localisation cliquable soulignée -->
+                    <div class="mt-3 flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2 text-[#80B9E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <a href="maps.html" class="underline hover:text-[#80B9E5]">El Ghazela</a>
+                    </div>
+
+                    <!-- Bouton avec icône de panier -->
+                    <button class="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte 3 avec Promo -->
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover relative">
+                <!-- Icône de promotion -->
+                <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg rounded-tr-xl text-sm">
+                    <span class="font-bold">Promo</span>
+                </div>
+                
+                <div class="flex justify-between items-start">
+                    <h3 class="text-xl font-bold text-[#80B9E5]">Harissa Bio</h3>
+                </div>
+                
+                <div class="mt-4">
+                    <p class="text-2xl font-bold text-gray-800">0.850 DT</p>
+                    
+                    <!-- Localisation cliquable soulignée -->
+                    <div class="mt-3 flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2 text-[#80B9E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <a href="maps.html" class="underline hover:text-[#80B9E5]">Tunis Centre</a>
+                    </div>
+
+                    <!-- Bouton avec icône de panier -->
+                    <button class="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte 4 Standard -->
+            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+              
+                <div class="flex justify-between items-start">
+                    <h3 class="text-xl font-bold text-[#80B9E5]">Harissa Amver</h3>
+                </div>
+
+                <div class="mt-4">
+                    <p class="text-2xl font-bold text-gray-800">0.800 DT</p>
+
+                    <!-- Localisation cliquable soulignée -->
+                    <div class="mt-3 flex items-center text-sm text-gray-500">
+                        <svg class="w-5 h-5 mr-2 text-[#80B9E5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <a href="maps.html" class="underline hover:text-[#80B9E5]">La Soukra</a>
+                    </div>
+
+                    <!-- Bouton avec icône de panier -->
+                    <button class="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer avec Bannière de Promotion -->
+    <footer class="bg-[#2B4669] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Colonne Gauche -->
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-xl font-bold mb-4">T9arnit</h2>
+                    <p class="text-gray-400">Achetez plus intelligemment.<br>Faites-vous livrer.</p>
+                </div>
+          
+                <!-- Colonne Centrale -->
+                <div class="mb-6 md:mb-0">
+                    <h3 class="font-bold mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Produits</a></li>
+                        <li><a href="#" class="hover:text-white">Services</a></li>
+                        <li><a href="#" class="hover:text-white">Guide</a></li>
+                    </ul>
+                </div>
+          
+                <!-- Colonne Droite -->
+                <div>
+                    <h3 class="font-bold mb-4">Locations</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>El Marsa</li>
+                        <li>El Ghazela</li>
+                        <li>Cite El Nasser</li>
+                        <li>El Menzah 9</li>
+                    </ul>
+                </div>
+            </div>
+      
+            <!-- Bannière de promotion dans le footer -->
+            <div class="mt-8 text-center">
+                <img src="https://example.com/promotion-banner.png" alt="Promotion" class="mx-auto w-64">
+            </div>
+      
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p class="text-gray-400 text-sm">
+                    © All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
